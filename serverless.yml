@@ -4,8 +4,22 @@ service: my-app
 provider:
   name: aws
   runtime: nodejs8.10
+  iamRoleStatements:
+    - Effect: Allow
+      Action: 
+        - dynamodb:PutItem
+      #arn - amazon resource number
+      # structure: arn:aws:the service:the region:accountId resourceType:resource
+      Resource: "arn:aws:dynamodb:us-east-1:054825718167:table/todos"
 
 functions:
+  createTodo:
+    handler: create.run
+    events:
+      - http:
+          path: todos
+          method: post
+
   helloWorld:
     # handler refers to the file handler
     # which exports a function called run

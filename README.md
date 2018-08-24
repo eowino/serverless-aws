@@ -23,6 +23,7 @@ Create a new user from the [AWS Console](https://console.aws.amazon.com/iam/home
 - To see your console.log debug outputs, use the `--log` flag when invoking
 - Once deployed, run `sls deploy --function helloWorld` to only update your function. This is quicker as it doesn't re-deploy
 your cloud formation
+- To see logs of a function - `sls logs -f FUNCTION_NAME_HERE`
 
 ### Step 4
 - Attach an HTTP endpoint to your Lambda function via events - see `serverless.yml`
@@ -31,3 +32,10 @@ your cloud formation
 ### Step 5
 - To store data using DynamoDB, add a resources section in the yaml config file
 - [Create a table](https://console.aws.amazon.com/dynamodb/home)
+
+## Step 6
+- Writing data to a DynamoDB table using a lambda function - see `create.js`
+- By default, lambda functions is not allowed to interact with tables. Access must be provided
+- An iamRole must be set - see `serverless.yml`
+- Test HTTP POST function - `curl -X POST https://gcc1c1spt5.execute-api.us-east-1.amazonaws.com/dev/todos --data '{ "text": "First DynamoDB post" }'`
+- N.B. ensure you have selected the correct region
