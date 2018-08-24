@@ -10,3 +10,7 @@ functions:
     # handler refers to the file handler
     # which exports a function called run
     handler: handler.run
+    events:
+      - http:
+          path: /
+          method: get

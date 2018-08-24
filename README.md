@@ -23,3 +23,7 @@ Create a new user from the [AWS Console](https://console.aws.amazon.com/iam/home
 - To see your console.log debug outputs, use the `--log` flag when invoking
 - Once deployed, run `sls deploy --function helloWorld` to only update your function. This is quicker as it doesn't re-deploy
 your cloud formation
+
+### Step 4
+- Attach an HTTP endpoint to your Lambda function via events - see `serverless.yml`
+- Your function must return an object - see `handler.js`
