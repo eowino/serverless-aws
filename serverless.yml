@@ -14,3 +14,30 @@ functions:
       - http:
           path: /
           method: get
+
+# adding raw cloud formation services
+resources:
+  Resources:
+    # Resource name
+    TodosTable:
+      Type: 'AWS::DynamoDB::Table'
+      # Minumum config, table needs a few props:
+      # Table name, Attributes used for Primary and Secondary indexes
+      Properties:
+        TableName: todos
+        AttributeDefinitions:
+          -
+            # id of type string
+            AttributeName: id
+            AttributeType: S
+        # Define attributes that make up the primary key for the table
+        # Its only compulsory to define attributes for the key schema
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        # Define throughput capacity for read and writes
+        # 1 is enough here, consider using auto-scaling for the DynamoDB table
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1

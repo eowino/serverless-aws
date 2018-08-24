@@ -27,3 +27,7 @@ your cloud formation
 ### Step 4
 - Attach an HTTP endpoint to your Lambda function via events - see `serverless.yml`
 - Your function must return an object - see `handler.js`
+
+### Step 5
+- To store data using DynamoDB, add a resources section in the yaml config file
+- [Create a table](https://console.aws.amazon.com/dynamodb/home)
