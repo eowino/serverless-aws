@@ -39,3 +39,9 @@ your cloud formation
 - An iamRole must be set - see `serverless.yml`
 - Test HTTP POST function - `curl -X POST https://gcc1c1spt5.execute-api.us-east-1.amazonaws.com/dev/todos --data '{ "text": "First DynamoDB post" }'`
 - N.B. ensure you have selected the correct region
+
+## Step 7
+- Reading data from DynamoDB
+- Ensure the `dynamodb:GetItem` permission is set
+- Add a function - see `get.js`
+- Test function (retrieve id from console): `curl https://gcc1c1spt5.execute-api.us-east-1.amazonaws.com/dev/todos/692ba68e-461d-4ddd-bca6-00c81553c92a`

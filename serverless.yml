@@ -8,11 +8,18 @@ provider:
     - Effect: Allow
       Action: 
         - dynamodb:PutItem
+        - dynamodb:GetItem
       #arn - amazon resource number
       # structure: arn:aws:the service:the region:accountId resourceType:resource
       Resource: "arn:aws:dynamodb:us-east-1:054825718167:table/todos"
 
 functions:
+  getTodo:
+    handler: get.run
+    events:
+      - http:
+          path: todos/{id}
+          method: get
   createTodo:
     handler: create.run
     events:
