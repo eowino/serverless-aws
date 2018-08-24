@@ -1,0 +1,12 @@
+# Service name
+service: my-app
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  helloWorld:
+    # handler refers to the file handler
+    # which exports a function called run
+    handler: handler.run
