@@ -18,7 +18,7 @@ Create a new user from the [AWS Console](https://console.aws.amazon.com/iam/home
 ### Step 3
 - Create a `serverless.yml` file to configure serverless
 - See the `serverless.yml` and correspoding `handler.js` file for more info
-- Run `sls deploy` to deploy your stack. This packages everything into a zip file and deploys it into your cloud formation stack.
+- Run `sls deploy` to deploy your [stack](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html). This packages everything into a zip file and deploys it into your cloud formation stack.
 - To invoke your function use the invoke command like so `$ sls invoke --function helloWorld`
 - To see your console.log debug outputs, use the `--log` flag when invoking
 - Once deployed, run `sls deploy --function helloWorld` to only update your function. This is quicker as it doesn't re-deploy
